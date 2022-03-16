@@ -1,6 +1,6 @@
 // adding Event listener to all the buttons
-for( var i = 0 ; i <= document.querySelectorAll(".drum").length ; i++ )
-{
+for( var i = 0 ; i <= document.querySelectorAll(".drum").length ; i++ ) {
+// {   here eventlister has two parameters "click" and anonymous function handleClick
     document.querySelectorAll("button")[i].addEventListener("click" , function handleClick()
     {
       var buttonInnerHTML = this.innerHTML ;
@@ -40,6 +40,11 @@ for( var i = 0 ; i <= document.querySelectorAll(".drum").length ; i++ )
 
     });
 }
+// adding keypress event listener to all the keys of the keyboard
+document.addEventListener( "keypress" , function()
+{
+    alert(" key ha sbeen pressed ");
+} )  
 
 
 
