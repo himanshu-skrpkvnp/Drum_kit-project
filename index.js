@@ -5,15 +5,15 @@ for( var i = 0 ; i <= document.querySelectorAll(".drum").length ; i++ ) {
     {
       var buttonInnerHTML = this.innerHTML ;
       makeSound(buttonInnerHTML) ;
+      buttonAnimation(buttonInnerHTML);
 
     });
 }
 // Detecting keyboard press
 document.addEventListener('keydown',function(event){
     makeSound(event.key);
+    buttonAnimation(event.key);
 });
-
-
 //  detecting which key is pressed and producing subsequent tune
 function makeSound(key)
 {
@@ -50,3 +50,14 @@ function makeSound(key)
         default: console.log(buttonInnerHTML)
             break;
            }}
+// adding animation
+function buttonAnimation(currentkey)
+{
+   var activeButton = document.querySelector("."+currentkey);
+   activeButton.classList.add('pressed');
+
+   setTimeout( function()
+   {
+       activeButton.classList.remove('pressed') ;
+   } , 200 )
+}
